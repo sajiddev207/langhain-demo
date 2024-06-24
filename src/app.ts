@@ -38,7 +38,7 @@ const model = new OpenAI({
 
 const chain = RetrievalQAChain.fromLLM(model, vectorStoreRetriever);
 
-const question = 'What is the theme of G20?';
+const question = 'What is age of sajid?';
 
 const answer = await chain.call({
   query: question
@@ -48,25 +48,4 @@ console.log({
   question,
   answer
 });
-
-const question1 = 'What is the budget allocated for railways?';
-const answer1 = await chain.call({
-  query: question1
-});
-
-console.log({
-  question: question1,
-  answer: answer1
-});
-
-const question2 = 'what is PM Matsya Sampada Yojana?'
-const answer2 = await chain.call({
-  query: question2
-});
-console.log({
-  question: question2,
-  answer: answer2
-});
-
-
 
